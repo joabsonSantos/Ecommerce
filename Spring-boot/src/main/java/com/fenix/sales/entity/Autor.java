@@ -16,21 +16,26 @@ public class Autor {
 
 	private String nome;
 
-	private Boolean status=false;
+	private boolean status = false;
+
+	
 
 	public Autor() {
 
 	}
 
-	public Autor(Long id, String nome, Boolean status) {
+	public Autor(Long id, String nome, boolean status) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.status = status;
+		
 	}
 
 
-
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 
 	public Long getId() {
 		return id;

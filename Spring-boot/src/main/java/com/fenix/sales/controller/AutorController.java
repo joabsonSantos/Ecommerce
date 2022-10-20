@@ -45,13 +45,12 @@ public class AutorController {
 
 	@GetMapping("/admin/ExcluirAutor/{id}")
 	public ModelAndView ExcluirAutor(@PathVariable Long id, RedirectAttributes redirectAttributes) {
-	    System.out.println(id);
 	    modelAndView.setViewName("redirect:/admin/autor");
-		Autor autor = autorRepository.findById(id).get();
-        autorRepository.delete(autor);
+	    Autor autor = autorRepository.findById(id).get();
+	    autor.setStatus(false);
+        autorRepository.save(autor);
 		return modelAndView;
 	}
-	
 	
 	@GetMapping("/admin/EditarAutor/{id}")
 	public ModelAndView EditarAutor(@PathVariable Long id, RedirectAttributes redirectAttributes) {

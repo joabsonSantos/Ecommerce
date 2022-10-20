@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name= "tbl_categorias")
@@ -14,58 +15,64 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String nome;
-	private Boolean status=false;
-
-
-	public Categoria() {
+	private boolean status;
+	
+	
+	
+	public Categoria(Integer id, String nome, boolean status, boolean categoria) {
+		this.id = id;
+		this.nome = nome;
+		this.status = status;
 		
 	}
 
+
+	public Categoria() {
+		super();
+	}
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+	public boolean isstatus() {
+		return status;
+	}
+
+
+	public void setstatus(boolean status) {
+		this.status = status;
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public boolean isStatus() {
+		return status;
+	}
+
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+
 	
-	
 
-    public Categoria(Integer id, String nome, String status) {
-        super();
-        this.id = id;
-        this.nome = nome;
-        this.status = status;
-    }
-
-
-
-
-    public Integer getId() {
-        return id;
-    }
-
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-
-    public String getNome() {
-        return nome;
-    }
-
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-
-    public String getStatus() {
-        return status;
-    }
-
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-	
-
-	
-	
 
 }

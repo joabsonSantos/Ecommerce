@@ -45,9 +45,9 @@ public class CategoriaController {
 	@GetMapping("/admin/ExcluirCategoria/{id}")
 	public ModelAndView ExcluirCategoria(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
 	    modelAndView.setViewName("redirect:/admin/Categoria");
-	    Categoria Categoria = CategoriaRepository.findById(id).get();
-	    Categoria.setStatus(false);
-        CategoriaRepository.save(Categoria);
+	    Categoria categoria = CategoriaRepository.findById(id).get();
+	    categoria.setStatus(false);
+        CategoriaRepository.save(categoria);
 		return modelAndView;
 	}
 	
